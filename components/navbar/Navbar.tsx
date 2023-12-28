@@ -1,18 +1,19 @@
+
 import Link from "next/link"
 import { HomeIcon } from "@primer/octicons-react"
 import { navItems } from "./navItems"
+import { ActiveLink } from ".."
 
-const temporalAsync = () =>{
-    return new Promise ( (resolve)=>{
-        setTimeout(()=>{
-            resolve(true)
-            
-        },2000)
-    })
-}
+//const temporalAsync = () =>{
+    //    return new Promise ( (resolve)=>{
+//        setTimeout(()=>{
+//            resolve(true)
+//            
+//        },2000)
+//    })
+//}
 
-export const Navbar =  () => 
-{
+export const Navbar =  () => {
     return(
         <nav className="flax bg-blue-800 bg-opacity-30 p-2 m-2 rounded">
 
@@ -20,7 +21,7 @@ export const Navbar =  () =>
 
             <div className="flex flex-1"></div>
 
-            {navItems.map(x  => <Link key={x.path} className="mr-2" href={x.path}> {x.icon&&<x.icon className="mr-1"/>} {x.text} </Link>)}
+            {navItems.map(x  => <ActiveLink key={x.path}  {...x}/> )}
 
         </nav>
     )

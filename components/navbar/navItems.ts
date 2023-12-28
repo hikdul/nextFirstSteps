@@ -7,7 +7,7 @@ export const navItems: navItemsProps[] = [
 ]
 
 
-interface navItemsProps {
+export interface navItemsProps {
     path: string,
     text: string,
     icon?: Icon 

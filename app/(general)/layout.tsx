@@ -1,7 +1,10 @@
+'use server'
+
 import { Navbar } from "@/components";
 import React from "react";
 
-export default function GeneralLayout({ children }: { children: React.ReactNode }) {
+async function GeneralLayout({ children }: { children: React.ReactNode }) 
+{
 
     return (
         <>
@@ -16,3 +19,5 @@ export default function GeneralLayout({ children }: { children: React.ReactNode 
     )
 
 }
+
+export default GeneralLayout

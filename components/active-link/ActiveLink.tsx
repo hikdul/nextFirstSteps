@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { navItemsProps } from "../navbar/navItems"
+import Link from 'next/link'
+import { navItemsProps } from '../navbar/navItems'
 import style from './activeLink.module.css'
-import { usePathname } from "next/navigation"
+import { usePathname } from 'next/navigation'
 
 export const ActiveLink = (x:navItemsProps) => {
   const pathName = usePathname()
@@ -13,7 +13,7 @@ export const ActiveLink = (x:navItemsProps) => {
     <Link  
         className={`${style.link} ${ (pathName == x.path) && style['actve-link']}`}
         href={x.path}> 
-            {x.icon&&<x.icon className="mr-1"/>} {x.text} 
-    </Link>
-  )
+            {x.icon&&<x.icon className='mr-1'/>} {x.text} 
+    </Link>)
+  
 }

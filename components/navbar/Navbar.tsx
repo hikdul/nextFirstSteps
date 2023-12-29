@@ -1,8 +1,11 @@
 
 import Link from "next/link"
-import { HomeIcon } from "@primer/octicons-react"
-import { navItems } from "./navItems"
+import {  HomeIcon } from "@primer/octicons-react" 
 import { ActiveLink } from ".."
+// ? tampoco puedo llamar a este listado desde otro archivo.
+    // ! Verificar y entender bien eso del lado del cliente y del servidor
+//import { navItems } from "./navItems" // ! se coloca aca por el rollo del paso de elementos entre comoponentes de servidor y cliente
+import { navItemsProps } from "./navItems"
 
 //const temporalAsync = () =>{
     //    return new Promise ( (resolve)=>{
@@ -12,6 +15,15 @@ import { ActiveLink } from ".."
 //        },2000)
 //    })
 //}
+
+// ? hay algun problema con el uso de iconos.
+    // -- parece que estos estan del lado del servidor y no es posible pasarselos a un componente de tipo client
+
+export const navItems: navItemsProps[] = [
+    {path: '/about', text: 'About'  },
+    {path: '/pricing', text: 'Pricing' },
+    {path: '/contact', text: 'Contact' },
+]
 
 export const Navbar =  () => {
     return(

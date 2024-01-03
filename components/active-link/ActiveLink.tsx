@@ -8,7 +8,8 @@ import { usePathname } from 'next/navigation'
 export const ActiveLink = (x:navItemsProps) => {
   const pathName = usePathname()
   console.log(pathName)
-
+  console.log({x : x.path})
+  
   return (
     <Link  
         className={`${style.link} ${ (pathName == x.path) && style['actve-link']}`}
